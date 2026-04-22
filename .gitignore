@@ -1,0 +1,14 @@
+# Sensitive API Keys
+.env
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Python cache (compiled files)
+__pycache__/
+*.pyc
+
+# Streamlit specific (optional but helpful)
+.streamlit/config.toml
