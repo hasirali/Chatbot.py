@@ -6,15 +6,12 @@ load_dotenv()
 
 model = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 
-chat_history = [
+messages=[
     SystemMessage(content="You are a helpful assistant."),
+    HumanMessage(content="What is the capital of France?")
 ]
 
-while True:
-    user_input = input('You: ')
-    chat_history.append(HumanMessage(content=user_input))
-    if user_input == 'exit':
-        break
-    result = model.invoke(chat_history)
-    chat_history.append(AIMessage(content=result.content))
-    print("Bot: ",  result.content)
+result = model.invoke(messages)
+messages.append(AIMessage(content=result.content))
+
+print(messages)
